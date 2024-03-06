@@ -20,6 +20,41 @@ h3 {
   --bg: rgb(134, 154, 148);
   --texto: rgb(93, 99, 99);
 }
+/*
+Fuentes
+*/
+.hendrigo-text {
+  font-family: Hendrigo;
+  font-weight: 100;
+}
+.georgia-text {
+  font-family: Georgia;
+  font-weight: 100;
+}
+.micross-text {
+  font-family: Micross;
+}
+.times-text {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+.agradecimiento-anillos-final {
+  width: 15%;
+}
+
+@font-face {
+  font-family: Hendrigo;
+  src: url(/fuentes/Hendrigo.ttf);
+}
+@font-face {
+  font-family: Georgia;
+  src: url(/fuentes/Georgia.ttf);
+}
+@font-face {
+  font-family: Micross;
+  src: url(/fuentes/micross.ttf);
+}
+
 main {
   width: 100%;
   max-width: 768px;
@@ -63,16 +98,17 @@ header,
 .header__text-container h2 {
   font-size: 2rem;
   letter-spacing: 0.5rem;
-  animation: fade-up 500ms;
+  animation: fade-up 1s;
 }
 .header__text-container h1 {
   margin: 3rem 0;
   font-size: 5.5rem;
-  animation: fade-up 750ms;
+  animation: fade-up 1.25s;
 }
 .header__text-container p {
   font-size: 1.5rem;
   letter-spacing: 0.5rem;
+  animation: fade-up 1.5s;
 }
 header span {
   display: block;
@@ -205,6 +241,9 @@ Estilos de la secci_n de fotos
   width: 100%;
   overflow: hidden;
   aspect-ratio: 1/1;
+  animation: reveal linear both;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
 }
 .galeria-item img {
   height: 100%;
@@ -393,6 +432,7 @@ footer {
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
+  padding-bottom: 3rem;
 }
 .regalos {
   height: 100%;
@@ -539,18 +579,24 @@ Estilos responsive
     font-size: 1.75rem;
   }
   .hospedaje-text {
+    font-size: 1rem;
+  }
+  .hospedaje-text span {
     font-size: 1.5rem;
   }
   .social-links a,
   .social-links p,
   .hotel-social a {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .hospedaje-img img {
     height: max-content;
     width: 25%;
   }
   .regalos-texto p {
+    font-size: 1rem;
+  }
+  .regalos-texto.cuenta p {
     font-size: 1.25rem;
   }
   .regalos img {
@@ -567,44 +613,12 @@ Estilos responsive
   }
   .regalos {
     padding: 5rem 0;
-    gap: 2.5rem;
+    gap: 1.5rem;
+  }
+  footer {
+    padding-bottom: 1.5rem;
   }
 }
-/*
-Fuentes
-*/
-.hendrigo-text {
-  font-family: Hendrigo;
-  font-weight: 100;
-}
-.georgia-text {
-  font-family: Georgia;
-  font-weight: 100;
-}
-.micross-text {
-  font-family: Micross;
-}
-.times-text {
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 500;
-}
-.agradecimiento-anillos-final {
-  width: 15%;
-}
-
-@font-face {
-  font-family: Hendrigo;
-  src: url(/fuentes/Hendrigo.ttf);
-}
-@font-face {
-  font-family: Georgia;
-  src: url(/fuentes/Georgia.ttf);
-}
-@font-face {
-  font-family: Micross;
-  src: url(/fuentes/micross.ttf);
-}
-
 /*
 Estilos de animaci_n
 */
@@ -616,5 +630,35 @@ Estilos de animaci_n
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeIn {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 5% cover 25%;
+  animation-fill-mode: both;
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
