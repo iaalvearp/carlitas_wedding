@@ -63,10 +63,12 @@ header,
 .header__text-container h2 {
   font-size: 2rem;
   letter-spacing: 0.5rem;
+  animation: fade-up 500ms;
 }
 .header__text-container h1 {
   margin: 3rem 0;
   font-size: 5.5rem;
+  animation: fade-up 750ms;
 }
 .header__text-container p {
   font-size: 1.5rem;
@@ -601,4 +603,18 @@ Fuentes
 @font-face {
   font-family: Micross;
   src: url(/fuentes/micross.ttf);
+}
+
+/*
+Estilos de animaci_n
+*/
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
