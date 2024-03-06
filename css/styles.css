@@ -1,0 +1,604 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: Micross;
+  color: var(--texto);
+}
+span,
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+:root {
+  --bg: rgb(134, 154, 148);
+  --texto: rgb(93, 99, 99);
+}
+main {
+  width: 100%;
+  max-width: 768px;
+  height: 100%;
+  margin: 0 auto;
+}
+header {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-image: url(/css/assets/imgs/hero_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+header .primera-planta {
+  position: absolute;
+  z-index: 1;
+  max-height: 27rem;
+  width: auto;
+}
+header .primera-planta.up {
+  top: -5rem;
+  left: -5rem;
+  transform: rotate(180deg);
+}
+header .primera-planta.down {
+  bottom: -2rem;
+  right: -5rem;
+}
+header,
+.header__text-container {
+  display: grid;
+  place-content: center;
+}
+.header__text-container {
+  z-index: 2;
+  text-align: center;
+}
+.header__text-container h2 {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+}
+.header__text-container h1 {
+  margin: 3rem 0;
+  font-size: 5.5rem;
+}
+.header__text-container p {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+}
+header span {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+.hendrigo-text br {
+  display: none;
+}
+
+/*
+Estilos de la secci_n de fecha y ubicaci_n
+*/
+.ceremonia {
+  min-height: 100vh;
+  width: 100%;
+}
+.ceremonia .fecha {
+  background-color: var(--bg);
+  height: 10rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.fecha .fecha__img {
+  height: 25%;
+}
+.fecha .fecha__img.bef {
+  transform: rotateY(180deg);
+}
+.fecha p {
+  color: rgb(255, 255, 255);
+  font-size: 1.75rem;
+  letter-spacing: 0.5rem;
+}
+.recepcion {
+  display: grid;
+  justify-items: center;
+  gap: 5rem;
+}
+.recepcion-img,
+.fotos-img,
+.social-img,
+.hospedaje-img {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+.recepcion-img img,
+.fotos-img img,
+.social-img img,
+.hospedaje-img img {
+  height: auto;
+  width: 25%;
+}
+.recepcion-titulo {
+  font-family: Micross;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  width: 50%;
+}
+.recepcion-titulo .one {
+  text-align: left;
+}
+.recepcion-titulo .two {
+  padding-left: 15%;
+}
+.recepcion-titulo .three {
+  text-align: right;
+  margin-top: -1.125rem;
+}
+.recepcion-texto,
+.confirmacion-texto,
+.social-texto {
+  font-family: Micross;
+  text-align: center;
+  font-size: 1.75rem;
+  letter-spacing: 0.125rem;
+}
+.btn {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Micross;
+  padding: 1rem 4rem;
+  background-color: var(--bg);
+  color: rgb(255, 255, 255);
+  border-radius: 5rem;
+  display: block;
+  transform: scale(1);
+  animation: transform 300ms;
+  cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.9);
+}
+
+/*
+Estilos de la secci_n de fotos
+*/
+.fotos {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+.fotos-titulo {
+  text-align: center;
+  font-family: Micross;
+  font-size: 2.25rem;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+}
+.galeria {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+}
+.galeria-item {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+.galeria-item img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.galeria-item .pic1 {
+  object-position: -8rem -4rem;
+  height: 120%;
+}
+.galeria-item .pic2 {
+  height: 180%;
+  object-position: -2rem -9rem;
+}
+.galeria-item .pic3 {
+  object-position: -20rem -10rem;
+  height: 160%;
+}
+.galeria-item .pic4 {
+  height: 180%;
+  object-position: 0rem -12.5rem;
+}
+.galeria-item .pic5 {
+  object-position: -7rem -3rem;
+  height: 120%;
+}
+.galeria-item .pic6 {
+  height: 170%;
+  object-position: 0rem -10rem;
+}
+.social-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.social-links a,
+.social-links p,
+.header__text-container a,
+.hotel-social a {
+  text-align: center;
+  font-size: 1.75rem;
+  letter-spacing: 0.125rem;
+}
+.social-img,
+.hotel-social {
+  margin: 0 auto 2rem auto;
+}
+.social-img img,
+.hotel-social img {
+  width: 10%;
+}
+.vestimenta {
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 4rem;
+  padding-bottom: 5rem;
+}
+.vestimenta-text,
+.hospedaje-title {
+  background-color: var(--bg);
+  padding: 5rem 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.vestimenta-text h2,
+.vestimenta-text p,
+.hospedaje-title {
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+  letter-spacing: 0.75rem;
+  text-align: center;
+}
+.vestimenta .para-ellas,
+.vestimenta .para-ellos {
+  display: grid;
+  gap: 2rem;
+}
+.vestimenta-text p {
+  font-size: 2.25rem;
+  font-weight: 100;
+}
+.vestimenta .vestimenta-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+.caja-colores {
+  display: grid;
+  gap: 1.5rem;
+}
+.colores-up {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 70%;
+  justify-content: center;
+  margin: 0 auto;
+}
+.colores-up div,
+.colores-down div {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+.para-ellas .caja-colores .color1 {
+  background-color: rgb(193, 162, 137);
+}
+.para-ellas .caja-colores .color2 {
+  background-color: rgb(242, 149, 73);
+}
+.para-ellas .caja-colores .color3 {
+  background-color: rgb(186, 136, 180);
+}
+.para-ellas .caja-colores .color4 {
+  background-color: rgb(162, 204, 90);
+}
+.para-ellas .caja-colores .color5 {
+  background-color: rgb(214, 168, 176);
+}
+.para-ellas .caja-colores .color6 {
+  background-color: rgb(232, 225, 96);
+}
+.para-ellas .caja-colores .color7 {
+  background-color: rgb(114, 126, 82);
+}
+.para-ellos .caja-colores .color1 {
+  background-color: rgb(127, 138, 115);
+}
+.para-ellos .caja-colores .color2 {
+  background-color: rgb(113, 117, 124);
+}
+.para-ellos .caja-colores .color3 {
+  background-color: rgb(224, 213, 199);
+}
+.para-ellos .caja-colores .color4 {
+  background-color: rgb(239, 227, 194);
+}
+.para-ellos .caja-colores .color5 {
+  background-color: rgb(120, 180, 239);
+}
+.para-ellos .caja-colores .color6 {
+  background-color: rgb(119, 94, 37);
+}
+.para-ellos .caja-colores .color7 {
+  background-color: rgb(8, 65, 107);
+}
+/*
+Secci_n de hospedaje
+*/
+.hospedaje {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  gap: 5rem;
+  text-align: center;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+.hospedaje-text {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.hospedaje-text span {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.hospedaje-img {
+  margin: 0;
+}
+.hotel-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.regalos {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  padding: 3rem 0;
+  gap: 1.5rem;
+  z-index: 1;
+  position: relative;
+}
+.regalos img {
+  width: 10%;
+}
+.regalos-texto p {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 2rem;
+}
+.agradecimiento {
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
+  padding: 2rem 0;
+}
+.agradecimiento-img {
+  display: grid;
+}
+.agradecimiento-img img {
+  width: 70%;
+  z-index: 0;
+  margin: 0 auto;
+  margin-top: -22rem;
+}
+.agradecimiento-texto {
+  text-align: center;
+  font-size: 2rem;
+}
+/*
+Estilos responsive
+*/
+@media (width < 768px) {
+  header .primera-planta {
+    max-height: 10rem;
+    width: auto;
+  }
+  header .primera-planta.up {
+    top: -1rem;
+    left: -0.5rem;
+  }
+  header .primera-planta.down {
+    bottom: -1rem;
+    right: -0.5rem;
+  }
+  .header__text-container h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+  }
+  .header__text-container p {
+    font-size: 1.25rem;
+    letter-spacing: 0.25rem;
+  }
+  .header__text-container h1 {
+    margin: 2rem 0;
+    font-size: 4rem;
+  }
+  .hendrigo-text br {
+    display: block;
+  }
+  .fecha .fecha__img {
+    height: 20%;
+  }
+  .fecha p {
+    font-size: 1.125rem;
+    letter-spacing: 0.25rem;
+  }
+  .ceremonia .fecha {
+    height: 7.5rem;
+  }
+  .recepcion {
+    gap: 4rem;
+  }
+  .recepcion-img,
+  .fotos-img,
+  .hospedaje-img {
+    margin-top: 2.5rem;
+  }
+  .recepcion-img img {
+    width: 30%;
+  }
+  .recepcion-titulo {
+    font-size: 1rem;
+    width: 80%;
+  }
+  .recepcion-texto,
+  .confirmacion-texto,
+  .social-texto {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 1rem;
+  }
+  .social-img {
+    margin-top: 0;
+  }
+  .fotos {
+    gap: 3rem;
+  }
+  .vestimenta-text,
+  .hospedaje-title {
+    padding: 2.5rem 0;
+  }
+  .vestimenta-text h2 {
+    font-size: 1.75rem;
+  }
+  .vestimenta-text p {
+    font-size: 1.5rem;
+  }
+  .fotos-titulo {
+    font-size: 1.75rem;
+    letter-spacing: 0.25rem;
+  }
+  .vestimenta .vestimenta-title {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
+  .para-ellas .vestimenta-title,
+  .para-ellos .vestimenta-title {
+    font-size: 1.5rem;
+  }
+  .vestimenta {
+    gap: 4rem;
+  }
+  .colores-up div,
+  .colores-down div {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .hospedaje {
+    gap: 2.5rem;
+  }
+  .hospedaje-title {
+    font-size: 1.75rem;
+  }
+  .hospedaje-text {
+    font-size: 1.5rem;
+  }
+  .social-links a,
+  .social-links p,
+  .hotel-social a {
+    font-size: 1.5rem;
+  }
+  .hospedaje-img img {
+    height: max-content;
+    width: 25%;
+  }
+  .regalos-texto p {
+    font-size: 1.25rem;
+  }
+  .regalos img {
+    width: 14%;
+  }
+  .agradecimiento-texto {
+    font-size: 1.25rem;
+  }
+  .agradecimiento-img img {
+    margin-top: -12rem;
+  }
+  .agradecimiento-anillos-final {
+    width: 18%;
+  }
+  .regalos {
+    padding: 5rem 0;
+    gap: 2.5rem;
+  }
+}
+/*
+Fuentes
+*/
+.hendrigo-text {
+  font-family: Hendrigo;
+  font-weight: 100;
+}
+.georgia-text {
+  font-family: Georgia;
+  font-weight: 100;
+}
+.micross-text {
+  font-family: Micross;
+}
+.times-text {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+.agradecimiento-anillos-final {
+  width: 15%;
+}
+
+@font-face {
+  font-family: Hendrigo;
+  src: url(/fuentes/Hendrigo.ttf);
+}
+@font-face {
+  font-family: Georgia;
+  src: url(/fuentes/Georgia.ttf);
+}
+@font-face {
+  font-family: Micross;
+  src: url(/fuentes/micross.ttf);
+}
