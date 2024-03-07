@@ -172,7 +172,7 @@ Estilos de la secci_n de fecha y ubicaci_n
 }
 .recepcion-img img,
 .hospedaje-img img {
-  height: max-content;
+  height: min-content;
   min-width: 80px;
   max-width: 100px;
 }
@@ -345,7 +345,7 @@ Estilos de la secci_n de fotos
   width: 100%;
   text-align: center;
   display: grid;
-  grid-auto-rows: max-content;
+  grid-auto-rows: min-content;
   gap: 4rem;
   padding-bottom: 5rem;
   z-index: 2;
@@ -496,7 +496,7 @@ footer {
   position: relative;
 }
 .regalos img {
-  height: max-content;
+  height: min-content;
   width: 60px;
 }
 .regalos-texto p {
@@ -525,7 +525,7 @@ footer {
 }
 .agradecimiento-anillos-final {
   width: 10%;
-  height: max-content;
+  height: min-content;
   max-width: 80px;
   min-width: 60px;
 }
@@ -634,7 +634,7 @@ Estilos responsive
     font-size: 1.25rem;
   }
   .hospedaje-img img {
-    height: max-content;
+    height: min-content;
     width: 25%;
   }
   .regalos-texto p {
