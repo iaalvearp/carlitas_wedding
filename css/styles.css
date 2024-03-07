@@ -34,17 +34,10 @@ Fuentes
   font-family: Georgia;
   font-weight: 100;
 }
-.micross-text {
-  font-family: Micross;
-}
 .times-text {
   font-family: "Times New Roman", Times, serif;
   font-weight: 500;
 }
-.agradecimiento-anillos-final {
-  width: 15%;
-}
-
 @font-face {
   font-family: Hendrigo;
   src: url(/fuentes/Hendrigo.ttf);
@@ -143,6 +136,9 @@ Estilos de la secci_n de fecha y ubicaci_n
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 3% cover 8%;
 }
 .fecha__img {
   width: 10%;
@@ -169,6 +165,11 @@ Estilos de la secci_n de fecha y ubicaci_n
   display: flex;
   justify-content: center;
 }
+.recepcion-img {
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 8% cover 13%;
+}
 .recepcion-img img,
 .hospedaje-img img {
   height: max-content;
@@ -185,6 +186,9 @@ Estilos de la secci_n de fecha y ubicaci_n
   font-weight: 100;
   width: 25%;
   max-width: 336px;
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 13% cover 18%;
 }
 .recepcion-titulo .one {
   text-align: left;
@@ -204,6 +208,12 @@ Estilos de la secci_n de fecha y ubicaci_n
   font-size: var(--fs-texto);
   letter-spacing: 0.125rem;
 }
+.recepcion-texto,
+.confirmacion-texto {
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 15% cover 18%;
+}
 .btn {
   text-align: center;
   font-size: var(--fs-texto);
@@ -218,6 +228,9 @@ Estilos de la secci_n de fecha y ubicaci_n
   cursor: pointer;
   border: var(--bg) 1px solid;
   transition: background-color 500ms, border-color 500ms, color 500ms;
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 17% cover 20%;
 }
 .btn:hover {
   background-color: #ffffff;
@@ -245,10 +258,17 @@ Estilos de la secci_n de fotos
 }
 .fotos-titulo {
   text-align: center;
-  font-family: Micross;
-  font-size: 1.5rem;
+  font-size: var(--fs-titulo);
   letter-spacing: 0.5rem;
   font-weight: 100;
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 23% cover 38%;
+}
+.fotos-img {
+  animation: reveal linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 20% cover 30%;
 }
 .fotos-img img {
   height: auto;
@@ -268,9 +288,6 @@ Estilos de la secci_n de fotos
   width: 100%;
   overflow: hidden;
   aspect-ratio: 1/1;
-  animation: reveal linear both;
-  animation-timeline: view();
-  animation-range: entry 20% cover 30%;
   border-radius: 0.5rem;
 }
 .galeria-item img {
@@ -340,6 +357,7 @@ Estilos de la secci_n de fotos
   padding-bottom: 5rem;
   z-index: 2;
   background-color: #ffffff;
+  margin-top: -0.5rem;
 }
 .vestimenta-text,
 .hospedaje-title {
@@ -444,6 +462,8 @@ Secci_n de hospedaje
   text-align: center;
   overflow: hidden;
   margin-top: -0.5rem;
+  z-index: 2;
+  padding-bottom: 2rem;
 }
 .hospedaje-text {
   font-size: var(--fs-texto);
@@ -468,8 +488,9 @@ footer {
   min-height: 100%;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 9rem;
+  margin-bottom: 5rem;
   background-color: #ffffff;
+  z-index: 2;
 }
 .regalos {
   display: flex;
@@ -489,7 +510,6 @@ footer {
   color: rgb(255, 255, 255);
   text-align: center;
   font-size: var(--fs-texto);
-  letter-spacing: 0.125rem;
 }
 .agradecimiento {
   display: grid;
@@ -580,12 +600,11 @@ Estilos responsive
   .fotos {
     gap: 3rem;
   }
-  .vestimenta-text,
-  .hospedaje-title {
+  .vestimenta-text {
     padding: 1.5rem 0;
   }
   .fotos-titulo {
-    font-size: 1.75rem;
+    font-size: var(--fs-medium);
     letter-spacing: 0.25rem;
   }
   .fotos-img img {
@@ -642,7 +661,7 @@ Estilos responsive
     gap: 1.5rem;
   }
   footer {
-    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 }
 /*
@@ -658,34 +677,15 @@ Estilos de animaci_n
     transform: translateY(0) scale(1);
   }
 }
-@keyframes show {
-  from {
-    opacity: 0;
-    transform: translateY(60%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fadeIn {
-  view-timeline-name: --image;
-  view-timeline-axis: block;
 
-  animation-timeline: --image;
-  animation-name: show;
-
-  animation-range: entry 5% cover 25%;
-  animation-fill-mode: both;
-}
 @keyframes reveal {
   from {
     opacity: 0;
-    transform: scale(0.5);
+    transform: translateY(5rem);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0rem);
   }
 }
 @keyframes fade-move-down {
