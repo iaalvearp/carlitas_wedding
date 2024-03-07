@@ -271,6 +271,7 @@ Estilos de la secci_n de fotos
 .galeria {
   display: grid;
   width: 80%;
+  max-width: 1080px;
   margin: 0 auto;
   gap: 1rem;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
