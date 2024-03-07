@@ -261,14 +261,6 @@ Estilos de la secci_n de fotos
   font-size: var(--fs-titulo);
   letter-spacing: 0.5rem;
   font-weight: 100;
-  animation: reveal linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 23% cover 38%;
-}
-.fotos-img {
-  animation: reveal linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 20% cover 30%;
 }
 .fotos-img img {
   height: auto;
