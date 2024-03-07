@@ -168,13 +168,15 @@ Estilos de la secci_n de fecha y ubicaci_n
 .hospedaje-img {
   display: flex;
   justify-content: center;
-  margin-top: 2.5rem;
 }
 .recepcion-img img,
 .hospedaje-img img {
   height: max-content;
   min-width: 80px;
   max-width: 100px;
+}
+.recepcion-img img {
+  margin-top: 2.5rem;
 }
 .recepcion-titulo {
   font-family: Micross;
@@ -329,7 +331,7 @@ Estilos de la secci_n de fotos
   width: 2.5rem;
 }
 .vestimenta {
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   text-align: center;
   display: grid;
@@ -355,12 +357,12 @@ Estilos de la secci_n de fotos
 .vestimenta-text p,
 .hospedaje-title {
   color: rgb(255, 255, 255);
-  font-size: var(--fs-titulo);
-  letter-spacing: 0.75rem;
+  font-size: var(--fs-medium);
+  letter-spacing: 0.5rem;
   text-align: center;
 }
 .vestimenta-text p {
-  font-size: var(--fs-titulo);
+  font-size: var(--fs-medium);
   font-weight: 100;
 }
 .vestimenta .para-ellas,
@@ -369,7 +371,7 @@ Estilos de la secci_n de fotos
   gap: 2rem;
 }
 .vestimenta .vestimenta-title {
-  font-size: var(--fs-titulo);
+  font-size: var(--fs-medium);
   font-weight: 500;
 }
 .caja-colores {
@@ -435,12 +437,13 @@ Estilos de la secci_n de fotos
 Secci_n de hospedaje
 */
 .hospedaje {
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   display: grid;
   gap: 2.5rem;
   text-align: center;
   overflow: hidden;
+  margin-top: -0.5rem;
 }
 .hospedaje-text {
   font-size: var(--fs-texto);
@@ -462,31 +465,31 @@ Secci_n de hospedaje
   gap: 1rem;
 }
 footer {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   overflow: hidden;
-  padding-bottom: 3rem;
+  margin-bottom: 9rem;
+  background-color: #ffffff;
 }
 .regalos {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--bg);
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   gap: 1.5rem;
   z-index: 1;
   position: relative;
 }
 .regalos img {
-  width: 10%;
   height: max-content;
-  max-width: 100px;
-  min-width: 80px;
+  width: 60px;
 }
 .regalos-texto p {
   color: rgb(255, 255, 255);
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fs-texto);
+  letter-spacing: 0.125rem;
 }
 .agradecimiento {
   display: grid;
@@ -505,7 +508,13 @@ footer {
 }
 .agradecimiento-texto {
   text-align: center;
-  font-size: 2rem;
+  font-size: var(--fs-medium);
+}
+.agradecimiento-anillos-final {
+  width: 10%;
+  height: max-content;
+  max-width: 80px;
+  min-width: 60px;
 }
 /*
 Estilos responsive
@@ -516,12 +525,12 @@ Estilos responsive
     width: auto;
   }
   header .primera-planta.up {
-    top: -1rem;
-    left: -0.5rem;
+    top: 0rem;
+    left: -1rem;
   }
   header .primera-planta.down {
-    bottom: -1rem;
-    right: -0.5rem;
+    bottom: 0rem;
+    right: -0.25rem;
   }
   .portada-img {
     width: 100%;
@@ -544,7 +553,7 @@ Estilos responsive
   .recepcion-img,
   .fotos-img,
   .hospedaje-img {
-    margin-top: 1.25rem;
+    padding-top: 2.5rem;
   }
   .recepcion-img img {
     width: 20%;
@@ -585,19 +594,9 @@ Estilos responsive
   .fotos .social-texto br {
     display: none;
   }
-  .vestimenta-text h2 {
-    font-size: 1.75rem;
-  }
-  .vestimenta-text p {
-    font-size: 1.5rem;
-  }
-  .vestimenta .vestimenta-title {
-    font-size: 1.75rem;
-    font-weight: 500;
-  }
   .para-ellas .vestimenta-title,
   .para-ellos .vestimenta-title {
-    font-size: 1.5rem;
+    font-size: var(--fs-medium);
   }
   .vestimenta {
     gap: 4rem;
@@ -609,13 +608,13 @@ Estilos responsive
     gap: 2.5rem;
   }
   .hospedaje-title {
-    font-size: 1.75rem;
+    font-size: var(--fs-medium);
   }
   .hospedaje-text {
-    font-size: 1rem;
+    font-size: var(--fs-texto);
   }
   .hospedaje-text span {
-    font-size: 1.5rem;
+    font-size: var(--fs-medium);
   }
   .social-links a,
   .social-links p,
@@ -632,20 +631,14 @@ Estilos responsive
   .regalos-texto.cuenta p {
     font-size: 1.25rem;
   }
-  .regalos img {
-    width: 14%;
-  }
   .agradecimiento-texto {
     font-size: 1.25rem;
   }
   .agradecimiento-img img {
     margin-top: -12rem;
   }
-  .agradecimiento-anillos-final {
-    width: 18%;
-  }
   .regalos {
-    padding: 5rem 0;
+    padding: 1.5rem 0;
     gap: 1.5rem;
   }
   footer {
